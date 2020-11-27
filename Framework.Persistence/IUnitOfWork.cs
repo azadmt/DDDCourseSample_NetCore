@@ -1,0 +1,3 @@
+﻿namespace Framework.Persistence.Ef
+{
+}
