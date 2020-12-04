@@ -12,7 +12,7 @@ namespace Framework.Config
             serviceCollection.AddScoped<IBus, BusControl>();
             serviceCollection.AddScoped<IQueryBus, BusControl>();
             serviceCollection.AddScoped<IContainer, Container>();
-          //  serviceCollection.AddScoped<IEnterpriseServiceBus, MassTransitServiceBus>();
+            serviceCollection.AddScoped<IEnterpriseServiceBus, MassTransitServiceBus>();
         }
 
     }

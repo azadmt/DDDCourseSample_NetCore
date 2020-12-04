@@ -1,6 +1,7 @@
 ﻿using CustomerManagement.ApplicationService.Customer;
 using CustomerManagement.Persistence;
 using CustomerManagement.Persistence.Repository;
+using CustomerManagement.QueryService;
 using Framework.Core;
 using Framework.Core.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,10 @@ namespace CustomerManagement.Api
         {
             Framework.Config.DependencyConfigurator.Config(serviceCollection);
 
-            serviceCollection.AddDbContext<CustomerManagementUnitOfWork>(options => options.UseSqlServer(configuration.GetConnectionString("WriteConnection")));
+            serviceCollection.AddDbContext<CustomerManagementUnitOfWork>(options => options.UseSqlServer(configuration.GetConnectionString("WriteConnection"), b => b.MigrationsAssembly(typeof(CustomerManagementUnitOfWork).Assembly.FullName)));
+            //TODO: Move To Seperate Process
+            serviceCollection.AddDbContext<QueryDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ReadConnection"), b => b.MigrationsAssembly(typeof(QueryDbContext).Assembly.FullName)));
+
             serviceCollection.AddScoped<CustomerManagementUnitOfWork>();
             serviceCollection.AddScoped(typeof(IUnitOfWork), p => p.GetService<CustomerManagementUnitOfWork>());
             RegisterControllers(serviceCollection);

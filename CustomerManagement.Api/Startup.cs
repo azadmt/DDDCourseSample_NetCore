@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CustomerManagement.DomainContract;
+using CustomerManagement.QueryService.EventHandler;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -30,15 +32,15 @@ namespace CustomerManagement.Api
             services.AddMassTransit(x =>
             {
                 //// TODO: Auto Register Consumers
-                //x.AddConsumer<SupplierRegisterdEventConsumer>();
-
-                //x.UsingRabbitMq((context, cfg) =>
-                //{
-                //    cfg.ReceiveEndpoint(nameof(SupplierRegisterdEvent), e =>
-                //    {
-                //        e.ConfigureConsumer<SupplierRegisterdEventConsumer>(context);
-                //    });
-                //});
+                x.AddConsumer<CustomerRegisteredEventHandler>();
+               // x.UsingRabbitMq();
+                x.UsingRabbitMq((context, cfg) =>
+                {
+                    cfg.ReceiveEndpoint(nameof(CustomerRegisteredEvent), e =>
+                    {
+                        e.ConfigureConsumer<CustomerRegisteredEventHandler>(context);
+                    });
+                });
             });
 
             services.AddMassTransitHostedService();

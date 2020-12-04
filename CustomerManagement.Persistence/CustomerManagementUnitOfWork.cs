@@ -8,7 +8,7 @@ namespace CustomerManagement.Persistence
 {
     public class CustomerManagementUnitOfWork : ApplicationDbContext
     {
-        public CustomerManagementUnitOfWork(DbContextOptions options, IBus bus) : base(options, bus)
+        public CustomerManagementUnitOfWork(DbContextOptions<CustomerManagementUnitOfWork> options, IBus bus) : base(options, bus)
         {
 
         }

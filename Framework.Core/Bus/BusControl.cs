@@ -12,11 +12,11 @@ namespace Framework.Core
         private readonly Queue<IIntegrationEvent> _externalMessages;
         private readonly IEnterpriseServiceBus _enterpriseServiceBus;
         private readonly IContainer _container;
-        public BusControl(/*IEnterpriseServiceBus enterpriseServiceBus,*/ IContainer container)
+        public BusControl(IEnterpriseServiceBus enterpriseServiceBus, IContainer container)
         {
             _subscribers = new List<object>();
             _externalMessages = new Queue<IIntegrationEvent>();
-           // _enterpriseServiceBus = enterpriseServiceBus;
+            _enterpriseServiceBus = enterpriseServiceBus;
             _container = container;
         }
 

@@ -23,6 +23,7 @@ namespace CustomerManagement.Domain.Customer
             {
                 throw new CustomerNationalCodeIsNotValidException();
             }
+            Code = code;
         }
     }
 }
