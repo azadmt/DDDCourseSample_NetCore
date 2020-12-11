@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccountManagement.Domain.Contract\AccountManagement.Domain.Contract.csproj" />
+    <ProjectReference Include="..\Framework.Domain\Framework.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

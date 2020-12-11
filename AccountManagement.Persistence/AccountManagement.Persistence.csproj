@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AccountManagement.Domain\AccountManagement.Domain.csproj" />
+    <ProjectReference Include="..\CustomerManagement.Persistence\CustomerManagement.Persistence.csproj" />
+    <ProjectReference Include="..\Framework.Persistence\Framework.Persistence.Ef.csproj" />
+  </ItemGroup>
+
+</Project>

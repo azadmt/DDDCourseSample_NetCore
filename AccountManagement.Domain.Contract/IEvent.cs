@@ -1,0 +1,3 @@
+﻿namespace AccountManagement.Domain.Contract
+{
+}
