@@ -4,6 +4,8 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IdentityServer.Infrastructure;
+using IdentityServer.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -13,27 +15,43 @@ namespace IdentityServer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LoginController : ControllerBase
+    public class SecurityController : ControllerBase
     {
         private IConfiguration _config;
 
-        public LoginController(IConfiguration config)
+        public SecurityController(IConfiguration config)
         {
             _config = config;
         }
-        public IActionResult Login(LoginModel loginModel)
+
+        [HttpPost]
+        public IActionResult Login(Model.LoginModel loginModel)
         {
-            IActionResult response = Unauthorized();
-            var user = AuthenticateUser(loginModel);
+            string token = string.Empty;
+            //authenticate 
 
-            if (user != null)
+            if (InMemoryDB.Users.Any(p => p.Username == loginModel.Username && p.Password == loginModel.Password))
             {
-                var tokenString = GenerateJSONWebToken(user);
-                response = Ok(new { token = tokenString });
-            }
+                token = Guid.NewGuid().ToString();
+                InMemoryDB.Tokens.Add
+                    (token,
+                    new IdentityServer.Model.SecurityToken()
+                    {
+                        Roles = InMemoryDB.UserPermissions[loginModel.Username],
+                        Username = loginModel.Username
 
-            return response;
+                    });
+            }
+            return Ok(new { Token = token });
         }
+
+        [HttpGet]
+        public Model.SecurityToken Get(string token)
+        {
+            var permission = InMemoryDB.Tokens[token];
+            return permission;
+        }
+
 
         private string GenerateJSONWebToken(UserModel userInfo)
         {
