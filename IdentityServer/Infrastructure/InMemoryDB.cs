@@ -14,7 +14,7 @@ namespace IdentityServer.Infrastructure
         static InMemoryDB()
         {
             Users.Add(new Model.User { Id = 1, Username = "admin", Password = "123",EmailAddress="admin@mail.com" });
-            Users.Add(new Model.User { Id = 2, Username = "guest", Password = "456", EmailAddress = "guest@mail.com" });
+            Users.Add(new Model.User { Id = 2, Username = "guest", Password = "123", EmailAddress = "guest@mail.com" });
             UserPermissions.Add("admin",new []{"RegisterCustomer", "CreateAccount" });
             UserPermissions.Add("guest", new []{"RegisterCustomer" });
             
