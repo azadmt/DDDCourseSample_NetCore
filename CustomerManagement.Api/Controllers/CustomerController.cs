@@ -6,6 +6,7 @@ using CustomerManagement.ApplicationService.Contract.Customer;
 using Framework.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace CustomerManagement.Api.Controllers
 {
@@ -14,9 +15,12 @@ namespace CustomerManagement.Api.Controllers
     public class CustomerController : ControllerBase
     {
         IBus _bus;
-        public CustomerController(IBus bus)
+        private readonly LinkGenerator linkGenerator;
+
+        public CustomerController(IBus bus,LinkGenerator linkGenerator)
         {
             _bus = bus;
+            this.linkGenerator = linkGenerator;
         }
 
         [HttpPost]
