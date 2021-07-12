@@ -1,4 +1,5 @@
-﻿namespace Framework.Core
+﻿
+namespace Framework.Core
 {
     public interface IMessage
     {

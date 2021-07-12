@@ -50,7 +50,7 @@ namespace Framework.Core
             }
             catch (Exception ex)
             {
-              //  await handler.Uow.Rollback();
+                //  await handler.Uow.Rollback();
                 throw ex;
             }
         }
