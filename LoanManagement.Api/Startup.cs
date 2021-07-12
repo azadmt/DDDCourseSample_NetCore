@@ -1,3 +1,7 @@
+
+using Castle.DynamicProxy;
+using LoanManagement.Application;
+using LoanManagement.Application.Contract.ServiceContract;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,6 +35,14 @@ namespace LoanManagement.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "LoanManagement.Api", Version = "v1" });
             });
+
+            //https://blog.zhaytam.com/2020/08/18/aspnetcore-dynamic-proxies-for-aop/
+            var proxyGenerator = new ProxyGenerator();
+            var actual = new LoanManagement.Application.LoanService();
+          //var proxiedService = (ILoanService)proxyGenerator.CreateInterfaceProxyWithTarget(typeof(ILoanService), actual, new LoggingInterceptor());
+
+            //services.AddSingleton(new ProxyGenerator());
+            //services.AddScoped<IInterceptor, LoggingInterceptor>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,6 +63,22 @@ namespace LoanManagement.Api
             {
                 endpoints.MapControllers();
             });
+        }
+    }
+
+    public class LoggingInterceptor : IInterceptor
+    {
+        private readonly ILogger<LoggingInterceptor> _logger;
+
+        public LoggingInterceptor(ILogger<LoggingInterceptor> logger)
+        {
+            _logger = logger;
+        }
+
+        public void Intercept(IInvocation invocation)
+        {
+            _logger.LogDebug($"Calling method {invocation.TargetType}.{invocation.Method.Name}.");
+            invocation.Proceed();
         }
     }
 }
