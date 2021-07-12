@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Persistence"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Api", "LoanManagement.Api\LoanManagement.Api.csproj", "{34E27E71-0651-4AEE-B6A6-E55F111114B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Application", "Framework.Application\Framework.Application.csproj", "{9A86B8B4-B788-4425-9851-4B7F7DCA3253}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{34E27E71-0651-4AEE-B6A6-E55F111114B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34E27E71-0651-4AEE-B6A6-E55F111114B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34E27E71-0651-4AEE-B6A6-E55F111114B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +92,7 @@ Global
 		{0E1F257C-00BF-426A-85A1-2B6F64C3DE5C} = {04D85915-7219-4278-9D5B-79B708BF7614}
 		{484CB056-5C22-41A3-B67A-7FBC193A7E2B} = {DF122FAC-463C-432A-84DF-35E2C3EDA73A}
 		{34E27E71-0651-4AEE-B6A6-E55F111114B5} = {0E1F257C-00BF-426A-85A1-2B6F64C3DE5C}
+		{9A86B8B4-B788-4425-9851-4B7F7DCA3253} = {DC21E67E-C273-49C0-85EE-C940F4143DDE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB000B5D-15FB-490E-BED1-28E1AA92E0AF}

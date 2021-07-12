@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LoanManagement.Application.Contract
+namespace Framework.Application
 {
     public class Class1
     {
