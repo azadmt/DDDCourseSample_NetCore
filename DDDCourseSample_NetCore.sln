@@ -5,13 +5,13 @@ VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LoanManagement", "LoanManagement", "{04D85915-7219-4278-9D5B-79B708BF7614}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Domain", "LoanManagement.Domain\LoanManagement.Domain.csproj", "{BD8D8F12-1F7E-42FE-B90A-60765283E26C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanManagement.Domain", "LoanManagement.Domain\LoanManagement.Domain.csproj", "{BD8D8F12-1F7E-42FE-B90A-60765283E26C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{DC21E67E-C273-49C0-85EE-C940F4143DDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{FFED5030-D431-49E7-91C0-35E24711E323}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Core", "Framework.Core\Framework.Core.csproj", "{FFED5030-D431-49E7-91C0-35E24711E323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Domain", "Framework.Domain\Framework.Domain.csproj", "{E75801E9-2EE1-47CE-9F10-97D4A6B89D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Domain", "Framework.Domain\Framework.Domain.csproj", "{E75801E9-2EE1-47CE-9F10-97D4A6B89D8D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{9492CF03-0126-40A1-84DA-CD08562AD221}"
 EndProject
@@ -19,19 +19,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DF122FAC-463C-432A-84DF-35E2C3EDA73A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Application", "LoanManagement.Application\LoanManagement.Application.csproj", "{FD93206C-6D98-4F90-AB52-E27DA340DBCD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanManagement.Application", "LoanManagement.Application\LoanManagement.Application.csproj", "{FD93206C-6D98-4F90-AB52-E27DA340DBCD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Application.Contract", "LoanManagement.Application.Contract\LoanManagement.Application.Contract.csproj", "{1F2DBD3A-440A-4EF4-AD3A-CB988D6E3F64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanManagement.Application.Contract", "LoanManagement.Application.Contract\LoanManagement.Application.Contract.csproj", "{1F2DBD3A-440A-4EF4-AD3A-CB988D6E3F64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Domain.Contract", "LoanManagement.Domain.Contract\LoanManagement.Domain.Contract.csproj", "{C2384332-B8EB-4C18-B15A-FE1D0ABC477F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanManagement.Domain.Contract", "LoanManagement.Domain.Contract\LoanManagement.Domain.Contract.csproj", "{C2384332-B8EB-4C18-B15A-FE1D0ABC477F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{0E1F257C-00BF-426A-85A1-2B6F64C3DE5C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Persistence", "LoanManagement.Persistence\LoanManagement.Persistence.csproj", "{484CB056-5C22-41A3-B67A-7FBC193A7E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanManagement.Persistence", "LoanManagement.Persistence\LoanManagement.Persistence.csproj", "{484CB056-5C22-41A3-B67A-7FBC193A7E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanManagement.Api", "LoanManagement.Api\LoanManagement.Api.csproj", "{34E27E71-0651-4AEE-B6A6-E55F111114B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanManagement.Api", "LoanManagement.Api\LoanManagement.Api.csproj", "{34E27E71-0651-4AEE-B6A6-E55F111114B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Framework.Application", "Framework.Application\Framework.Application.csproj", "{9A86B8B4-B788-4425-9851-4B7F7DCA3253}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Application", "Framework.Application\Framework.Application.csproj", "{9A86B8B4-B788-4425-9851-4B7F7DCA3253}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{17A99230-2E1A-4A3B-A5D2-58C62113DE13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorSample", "DecoratorSample\DecoratorSample.csproj", "{8D9F5994-E832-40F3-952D-65846D164CBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostsharpSample", "PostsharpSample\PostsharpSample.csproj", "{184B36EE-EAE2-4F07-A049-5B8B0D9F0DE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interceptor", "Interceptor\Interceptor.csproj", "{6424F6A7-0E8C-4242-B8F9-A4A7EF3D0E3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +83,18 @@ Global
 		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A86B8B4-B788-4425-9851-4B7F7DCA3253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D9F5994-E832-40F3-952D-65846D164CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D9F5994-E832-40F3-952D-65846D164CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D9F5994-E832-40F3-952D-65846D164CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D9F5994-E832-40F3-952D-65846D164CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184B36EE-EAE2-4F07-A049-5B8B0D9F0DE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184B36EE-EAE2-4F07-A049-5B8B0D9F0DE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184B36EE-EAE2-4F07-A049-5B8B0D9F0DE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184B36EE-EAE2-4F07-A049-5B8B0D9F0DE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6424F6A7-0E8C-4242-B8F9-A4A7EF3D0E3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6424F6A7-0E8C-4242-B8F9-A4A7EF3D0E3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6424F6A7-0E8C-4242-B8F9-A4A7EF3D0E3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6424F6A7-0E8C-4242-B8F9-A4A7EF3D0E3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +113,9 @@ Global
 		{484CB056-5C22-41A3-B67A-7FBC193A7E2B} = {DF122FAC-463C-432A-84DF-35E2C3EDA73A}
 		{34E27E71-0651-4AEE-B6A6-E55F111114B5} = {0E1F257C-00BF-426A-85A1-2B6F64C3DE5C}
 		{9A86B8B4-B788-4425-9851-4B7F7DCA3253} = {DC21E67E-C273-49C0-85EE-C940F4143DDE}
+		{8D9F5994-E832-40F3-952D-65846D164CBD} = {17A99230-2E1A-4A3B-A5D2-58C62113DE13}
+		{184B36EE-EAE2-4F07-A049-5B8B0D9F0DE1} = {17A99230-2E1A-4A3B-A5D2-58C62113DE13}
+		{6424F6A7-0E8C-4242-B8F9-A4A7EF3D0E3F} = {17A99230-2E1A-4A3B-A5D2-58C62113DE13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB000B5D-15FB-490E-BED1-28E1AA92E0AF}
