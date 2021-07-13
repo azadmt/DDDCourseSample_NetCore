@@ -11,11 +11,31 @@ namespace LoanManagement.Domain.LoanAggregate
         {
 
         }
+
         public Guid OwnerId { get; private set; }
         public Money Amount { get; private set; }
+        public LoanState State{ get; private set; }
         public DateTime PayDate { get; private set; }
         public IReadOnlyCollection<LoanInstallment> LoanInstallments => _loanInstallments;
 
+        public void Approve()
+        {
+            State = LoanState.Approved;
+        }
+
+        public void Reject()
+        {
+            State = LoanState.Rejected;
+        }
+        public void Pay()
+        {
+            State = LoanState.Paid;
+        }
+
+        public void PayInstallment(Money amount)
+        {
+           
+        }
     }
 
     public class LoanInstallment : Entity
@@ -35,5 +55,14 @@ namespace LoanManagement.Domain.LoanAggregate
             yield return Amount;
             yield return Currency;
         }
+    }
+    public enum LoanState
+    {
+        Requested,
+        Approved,
+        Rejected,
+        Paid,
+        Settled
+
     }
 }
