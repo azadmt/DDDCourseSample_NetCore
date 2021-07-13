@@ -1,5 +1,7 @@
 
+using Autofac;
 using Castle.DynamicProxy;
+using LoanManagement.Api.Controllers;
 using LoanManagement.Application;
 using LoanManagement.Application.Contract.ServiceContract;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +31,7 @@ namespace LoanManagement.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddMvc().AddControllersAsServices();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -43,6 +45,14 @@ namespace LoanManagement.Api
 
             //services.AddSingleton(new ProxyGenerator());
             //services.AddScoped<IInterceptor, LoggingInterceptor>();
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+
+            // If you want to set up a controller for, say, property injection
+            // you can override the controller registration after populating services.
+            builder.RegisterType<NotificationService>().As<INotificationService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
