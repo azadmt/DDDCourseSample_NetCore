@@ -12,6 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Framework.Configuration.Autofac\Framework.Configuration.Autofac.csproj" />
+    <ProjectReference Include="..\Framework.Core\Framework.Core.csproj" />
     <ProjectReference Include="..\LoanManagement.Application\LoanManagement.Application.csproj" />
   </ItemGroup>
 

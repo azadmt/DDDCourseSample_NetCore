@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Framework.Core;
+using LoanManagement.Application.Contract.DataContract;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,10 +13,11 @@ namespace LoanManagement.Api.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        public WeatherForecastController(INotificationService notificationService)
+        public WeatherForecastController(INotificationService notificationService,IBus bus)
         {
            
             this.notificationService = notificationService;
+            this.bus = bus;
         }
         private static readonly string[] Summaries = new[]
         {
@@ -22,11 +25,13 @@ namespace LoanManagement.Api.Controllers
         };
 
         private readonly INotificationService notificationService;
+        private readonly IBus bus;
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             notificationService.Send("asdasd");
+            bus.Send(new CreateLoan());
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
