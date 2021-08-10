@@ -24,7 +24,7 @@ namespace LoanManagement.Persistence.Mapping
             builder.HasMany(e => e.LoanInstallments)
               .WithOne() // or `WithOne() in case there is no inverse navigation property
                .Metadata.PrincipalToDependent.SetPropertyAccessMode(PropertyAccessMode.Field);
-
+       // https://stackoverflow.com/questions/60617430/ef-core-3-configure-backing-field-of-navigation-property
            // builder.Metadata.FindNavigation(nameof(Loan.LoanInstallments)).SetField("_loanInstallments");
         }
 
